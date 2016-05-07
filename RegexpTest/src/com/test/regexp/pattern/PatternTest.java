@@ -8,57 +8,64 @@ public class PatternTest {
 	public static void main(String[] args) {
 		String str="ah45454mw";
 		str=" a45df ";
-		 // °´Ö¸¶¨Ä£Ê½ÔÚ×Ö·û´®²éÕÒ
-		String line = "This order was placed for QT3000! OK?";
+		 // æŒ‰æŒ‡å®šæ¨¡å¼åœ¨å­—ç¬¦ä¸²æŸ¥æ‰¾
+		 str = "This order was placed for QT3000! OK?";
 		String spattern = "(.*)(\\d+)(.*)";
-//		Pattern pattern=Pattern.compile("[a-z]"); //Ä£Ê½¹¹ÔìÆ÷
-		Pattern pattern=Pattern.compile(spattern); //Ä£Ê½¹¹ÔìÆ÷
-		Matcher matcher=pattern.matcher(str); //Æ¥Åä¹¹ÔìÆ÷
+//		Pattern pattern=Pattern.compile("[a-z]"); //æ¨¡å¼æ„é€ å™¨
+		Pattern pattern=Pattern.compile(spattern); //æ¨¡å¼æ„é€ å™¨
+		Matcher matcher=pattern.matcher(str); //åŒ¹é…æ„é€ å™¨
 		
-		//1. //[a-z]  ×Ö·û´®Ö»ÓĞÒ»¸ö×Ö·ûÊ±true ÆäËûÎªfalse
-//		boolean isMatch=matcher.matches();// È«ÎÄÆ¥Åä
-//		System.out.println("ÊÇ·ñÈ«²¿Æ¥Åä£º"+isMatch); 
+		//1. //[a-z]  å­—ç¬¦ä¸²åªæœ‰ä¸€ä¸ªå­—ç¬¦æ—¶true å…¶ä»–ä¸ºfalse
+//		boolean isMatch=matcher.matches();// å…¨æ–‡åŒ¹é…
+//		System.out.println("æ˜¯å¦å…¨éƒ¨åŒ¹é…ï¼š"+isMatch); 
 		
-		//2. Æ¥ÅäµÄ×Ö·û´®ÔÚ×î¿ªÊ¼ Îªtrue
+		//2. åŒ¹é…çš„å­—ç¬¦ä¸²åœ¨æœ€å¼€å§‹ ä¸ºtrue
 //		boolean isMatch=matcher.lookingAt();
-//		System.out.println("ÊÇ·ñ×î¿ªÊ¼Æ¥Åä£º"+isMatch);
+//		System.out.println("æ˜¯å¦æœ€å¼€å§‹åŒ¹é…ï¼š"+isMatch);
 //		
-		// 3. Ö»ÒªÆ¥Åäµ½¾ÍÎªtrue
+		// 3. åªè¦åŒ¹é…åˆ°å°±ä¸ºtrue
 //		boolean isMatch=matcher.find();
-//		System.out.println("ÊÇ·ñÆ¥Åäµ½×Ö·û´®£º"+isMatch);
+//		System.out.println("æ˜¯å¦åŒ¹é…åˆ°å­—ç¬¦ä¸²ï¼š"+isMatch);
 		
 		
-		//4 ½«µÚÒ»´ÎÆ¥Åäµ½×Ó×Ö·û´®Ìæ»»
+		//4 å°†ç¬¬ä¸€æ¬¡åŒ¹é…åˆ°å­å­—ç¬¦ä¸²æ›¿æ¢
 //		String fristRepl=matcher.replaceFirst("**");
-//		System.out.println("µÚÒ»´ÎÆ¥Åäµ½µÄÌæ»»£º"+fristRepl);
+//		System.out.println("ç¬¬ä¸€æ¬¡åŒ¹é…åˆ°çš„æ›¿æ¢ï¼š"+fristRepl);
 //		
-//		//5.È«ÎÄÆ¥Åäµ½µÄÈ«²¿Ìæ»»
+//		//5.å…¨æ–‡åŒ¹é…åˆ°çš„å…¨éƒ¨æ›¿æ¢
 //		String replace=matcher.replaceAll("**");
-//		System.out.println("È«ÎÄÆ¥Åäµ½µÄÈ«²¿Ìæ»»£º"+replace);
+//		System.out.println("å…¨æ–‡åŒ¹é…åˆ°çš„å…¨éƒ¨æ›¿æ¢ï¼š"+replace);
 		
-		// 6. ½«Æ¥ÅäµÄ½á¹û²åÈëÄ³¸ö×Ö·û´®Ö®ºó£¿£¿£¿£¿
-//		StringBuffer sb=new StringBuffer("´ø²åÈëµÄ×Ö·û´®");
-//		matcher.appendReplacement(sb, "&");
-//		System.out.println("×îÖÕ½«Æ¥ÅäµÄ×Ö·û´®²åÈëµ½£º"+sb.toString());
+		// 6. å°†åŒ¹é…çš„ç»“æœæ’å…¥æŸä¸ªå­—ç¬¦ä¸²ä¹‹åï¼Ÿï¼Ÿï¼Ÿï¼Ÿ
+//		StringBuffer sb=new StringBuffer("å¸¦æ’å…¥çš„å­—ç¬¦ä¸²");
+//		// å…ˆåˆ¤æ–­æ˜¯å¦æœ‰åŒ¹é…çš„
+//		if (matcher.find()) {
+//			matcher.appendReplacement(sb, "&");
+//			System.out.println(str);
+//			System.out.println("æœ€ç»ˆå°†åŒ¹é…çš„å­—ç¬¦ä¸²æ’å…¥åˆ°ï¼š"+sb.toString());
+//		} else {
+//
+//			System.out.println("æ²¡æœ‰åŒ¹é…çš„");
+//		}
 
 		
-		// group  ??????
+		// group  é’ˆå¯¹æ­£åˆ™è¡¨è¾¾å¼ä¸­å«æœ‰()çš„ ï¼Œæ”¹ä¸ºç»„çš„æ¦‚å¿µã€‚ å¯ä»¥é€šè¿‡0,1,2..å¯¹æŸä¸ªç»„å†…çš„æ­£åˆ™è¡¨ç¤ºå¼å•ç‹¬çš„å¤„ç†ï¼Œ0ï¼Œä»£è¡¨å…¨éƒ¨
 //		if(matcher.find()){
 //			System.out.println("sdsd");
 //			String bb=matcher.group(1);
 //			System.out.println(bb);
 //		}
 		
-		 if (matcher.find( )) {
-			 System.out.println("Found value: " + matcher.group() );
-	         System.out.println("Found value: " + matcher.group(0) );
-	         System.out.println("Found value: " + matcher.group(1) );
-	         System.out.println("Found value: " +matcher.group(2) );
-	      } else {
-	         System.out.println("NO MATCH");
-	      }
+//		 if (matcher.find( )) {
+//			 System.out.println("Found value: " + matcher.group() );
+//	         System.out.println("Found value: " + matcher.group(0) );
+//	         System.out.println("Found value: " + matcher.group(1) );
+//	         System.out.println("Found value: " +matcher.group(2) );
+//	      } else {
+//	         System.out.println("NO MATCH");
+//	      }
 //		int count=matcher.groupCount();
-//		System.out.println("Æ¥Åäµ½¼¸¸ö£º"+count);
+//		System.out.println("åŒ¹é…åˆ°å‡ ä¸ªï¼š"+count);
 		
 		
 		
