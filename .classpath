@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="CrawlerTest/src"/>
+	<classpathentry kind="src" path="DesignDemo/src"/>
+	<classpathentry kind="src" path="designpattern/src"/>
+	<classpathentry kind="src" path="JavaIoTest/src"/>
+	<classpathentry kind="src" path="JaxbPro/src"/>
+	<classpathentry kind="src" path="RegexpTest/src"/>
+	<classpathentry kind="src" path="StringTest/src"/>
+	<classpathentry kind="src" path="ThreadPro/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="CrawlerTest/bin"/>
+</classpath>
