@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="NOVA" version="3.0">
+	<display-name>memcacheTest</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- 配置 SpringWebMain的Paramters -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:com/springmvc/web/beans.xml</param-value>
+	</context-param>
+	<!-- <context-param>
+		<param-name>logConfigFile</param-name>
+		<param-value>classpath:logback.xml</param-value>
+	</context-param> -->
+	<!-- <context-param>
+		<param-name>propertiesFiles</param-name>
+		<param-value>config/license.properties;config/nova.properties;config/shiro.properties</param-value>
+	</context-param> -->
+<!-- 	<listener>
+		<listener-class>com.cdv.common.misc.web.SpringWebMain</listener-class>
+	</listener> -->
+	<listener>
+ 	<listener-class>org.springframework.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- mvc -->
+	<servlet>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:com/springmvc/web/beans-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

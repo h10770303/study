@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:cxf="http://cxf.apache.org/core"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+						http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+						http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util.xsd
+						http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+	<context:property-placeholder />
+
+    <!--  配置数据库连接-->
+	<!-- <import resource="file:${app.home}/config/datasource.xml" /> -->
+	<bean id="datasource-hh" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://172.27.54.75:3306/xinaote_novadb?characterEncoding=utf8" />
+		<property name="username" value="hatest" />
+		<property name="password" value="111111" />
+	</bean>
+
+	<!-- <bean id="ssfb" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="datasource-nsite" />
+		<property name="configLocation" value="classpath:com/cdv/nova/db/mybatis-config.xml" />
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="ssfb" />
+		<property name="basePackage" value="com.cdv.nova.db.mapper" />
+	</bean> -->
+	
+	<!--  统计 Solr Server
+	<bean id="statisticsSolrServer" class="org.apache.solr.client.solrj.impl.CloudSolrServer">
+		<constructor-arg index="0" name="zkHost"
+			value="${zookeeper.zkHost}" />
+		<property name="defaultCollection" value="statistics" />
+	</bean>
+	
+	初始化数据库
+	<bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
+		<property name="dataSource" ref="datasource-nsite" />
+		<property name="changeLog"
+			value="classpath:com/cdv/nova/db/changelog/master.xml" />
+		<property name="contexts" value="production" />
+	</bean> -->
+	
+</beans>
