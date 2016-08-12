@@ -11,10 +11,19 @@ public class ReplaceTest {
 //		  System.out.println("!@#$%^&*()-=Abcd -----> "+"!@#$%^&*()-=Abcd".replace("#$%^&", "OK"));
 //		  System.out.println("!@#$%^&*()-=Abcd -----> "+"!@#$%^&*()-=Abcd".replaceAll("#$%^&", "OK"));
 		
-		boolean empt=true;
-		for (int i = 0; i < 5; i++) {
-			empt&=true;
-			System.out.println(empt);
+//		boolean empt=true;
+//		for (int i = 0; i < 5; i++) {
+//			empt&=true;
+//			System.out.println(empt);
+//		}
+		
+		
+		
+		 String aa="45dfdff";
+		 if (-1!=aa.lastIndexOf(".")) {
+			System.out.println(aa.substring(aa.lastIndexOf(".")));
+		}else{
+			System.out.println("文件没有扩展名");
 		}
 	}
 }

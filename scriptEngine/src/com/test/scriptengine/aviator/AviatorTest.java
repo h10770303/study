@@ -26,6 +26,7 @@ public class AviatorTest {
 		System.out.println("三元表达式："+AviatorEvaluator.execute("3>2?'yes':'no'"));
 		
 		
+		
 	}
 
 }
